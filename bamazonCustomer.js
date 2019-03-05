@@ -14,3 +14,19 @@ var connection = mysql.createConnection({
     password: "password",
     database: "bamazon_DB"
   });
+
+  connection.connect(function(err) {
+    if (err) throw err;
+    console.log("connected as id " + connection.threadId);
+    queryProducts();
+    // prompt();
+  });
+  
+  function queryProducts() {
+    connection.query("SELECT * FROM products", function(err, res) {
+      for (var i = 0; i < res.length; i++) {
+        console.log(res[i].id + " | " + res[i].product_name + " | " + res[i].price);
+      }
+      console.log("-----------------------------------");
+    });
+  }
