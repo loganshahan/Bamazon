@@ -3,11 +3,11 @@ CREATE DATABASE bamazon_DB;
 
 USE bamazon_DB;
 
-CREATE TABLE auctions(
+CREATE TABLE products(
   id INT NOT NULL AUTO_INCREMENT,
-  item_name VARCHAR(100) NOT NULL,
-  category VARCHAR(45) NOT NULL,
-  starting_bid INT default 0,
-  highest_bid INT default 0,
+  product_name VARCHAR(100) NOT NULL,
+  department_name VARCHAR(50) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  quantity INT NULL,
   PRIMARY KEY (id)
 );
