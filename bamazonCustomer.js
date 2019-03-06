@@ -78,6 +78,7 @@ var connection = mysql.createConnection({
                     queryProducts();
                 }
             }
+            connection.end();
         })
         // based on their answer, sell item or display quantity error
     //     if (quantity =< item.quantity) {
@@ -91,24 +92,24 @@ var connection = mysql.createConnection({
   });
 }
 
-  function sellProduct() {
+//   function sellProduct() {
     
-    var query = connection.query(
-      "UPDATE products SET ? WHERE ?",
-      [
-        {
-          quantity: productData.quantity- quantity
-        },
-        {
-            id: item
-        }
-      ],
-      function(err, res) {
-        console.log(query.sql);
+//     var query = connection.query(
+//       "UPDATE products SET ? WHERE ?",
+//       [
+//         {
+//           quantity: productData.quantity- quantity
+//         },
+//         {
+//             id: item
+//         }
+//       ],
+//       function(err, res) {
+//         console.log(query.sql);
         
         
         
-      }
-    );
+//       }
+//     );
     
-    };
+//     };
