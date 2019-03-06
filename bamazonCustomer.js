@@ -19,7 +19,7 @@ var connection = mysql.createConnection({
     if (err) throw err;
     console.log("connected as id " + connection.threadId);
     queryProducts();
-    prompt();
+    // prompt();
   });
   
   function queryProducts() {
@@ -29,6 +29,7 @@ var connection = mysql.createConnection({
       }
       console.log("-----------------------------------");
     });
+    prompt();
   };
 
   function prompt(){
@@ -74,6 +75,7 @@ var connection = mysql.createConnection({
                 }
                 else{
                     console.log("Insuffficient Quanitity");
+                    queryProducts();
                 }
             }
         })
