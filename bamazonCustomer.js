@@ -44,7 +44,7 @@ var connection = mysql.createConnection({
       {
         name: "quantity",
         type: "input",
-        message: "What is the quanity of the item you would like to purchase?",
+        message: "What is the quantity of the item you would like to purchase?",
         validate: function(value) {
             if (isNaN(value) === false) {
               return true;
